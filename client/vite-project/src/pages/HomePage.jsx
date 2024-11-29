@@ -10,10 +10,15 @@ import {
   useSensors,
   MouseSensor,
   TouchSensor,
+  PointerSensor,
 } from "@dnd-kit/core";
 
 export default function HomePage() {
-  const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
+  const sensors = useSensors(
+    useSensor(MouseSensor),
+    useSensor(TouchSensor),
+    useSensor(PointerSensor, { activationConstraint: { distance: 8 } })
+  );
 
   const [notes, setNotes] = useState([]);
   const [statuses, setStatuses] = useState([]);
@@ -75,7 +80,7 @@ export default function HomePage() {
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-            }
+            },
           }
         );
 
@@ -102,7 +107,11 @@ export default function HomePage() {
           <p>Add Task</p>
         </button>
         <div className="flex flex-col md:flex-row gap-4 ">
-          <DndContext sensors={sensors} onDragEnd={handleDragEnd} className="z-40">
+          <DndContext
+            sensors={sensors}
+            onDragEnd={handleDragEnd}
+            className="z-40"
+          >
             {statuses.map((status) => (
               <KanbanBoard
                 key={status.id}
