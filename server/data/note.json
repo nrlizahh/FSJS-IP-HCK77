@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "task": "Membuat API",
+      "description": "Membuat endpoint API untuk fitur autentikasi",
+      "userId": 1,
+      "statusId": 1,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "task": "Desain UI",
+      "description": "Mendesain halaman utama aplikasi dengan React",
+      "userId": 1,
+      "statusId": 2,
+      "order": 1
+    },
+    {
+      "id": 3,
+      "task": "Testing",
+      "description": "Melakukan testing API menggunakan Postman",
+      "userId": 2,
+      "statusId": 3,
+      "order": 1
+    }
+]
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
