@@ -32,7 +32,7 @@ export default function EditTaskModal({ task, onClose, updateTaskInBoard }) {
         })
         .then((response) => {
           console.log("Task updated:", response.data);
-          updateTaskInBoard(response.data.data); // Memperbarui data di board
+          updateTaskInBoard(response.data.data); // Memperbarui task langsung di UI
           setIsTaskUpdated(true);
           onClose();
         })
@@ -94,7 +94,11 @@ export default function EditTaskModal({ task, onClose, updateTaskInBoard }) {
               disabled={isTaskUpdated || isLoading}
               className="px-4 py-2 bg-blue-500 text-white rounded-md"
             >
-              {isTaskUpdated ? "Task Updated" : isLoading ? "Updating..." : "Update Task"}
+              {isTaskUpdated
+                ? "Task Updated"
+                : isLoading
+                ? "Updating..."
+                : "Update Task"}
             </button>
           </div>
         </form>
