@@ -19,7 +19,7 @@ export default function CardTask({ note, openEditModal, handleDeletedNotes }) {
       }}
     >
       {/* Icons in the top-right corner */}
-      <div className="mb-2 flex space-x-2 justify-content-end">
+      <div className="mb-2 flex space-x-2 justify-content-end z-50">
         <button
           onClick={() => openEditModal(note)}
           className="p-1 text-blue-500 bg-white rounded-full shadow hover:bg-blue-100"
@@ -33,7 +33,7 @@ export default function CardTask({ note, openEditModal, handleDeletedNotes }) {
             console.log("delete");
             handleDeletedNotes(note.id);
           }}
-          className="p-1 text-red-500 bg-white rounded-full shadow hover:bg-red-100"
+          className="p-1 text-red-500 bg-white rounded-full shadow hover:bg-red-100 z-50"
           aria-label="Delete"
         >
           <TrashIcon className="w-5 h-5" />

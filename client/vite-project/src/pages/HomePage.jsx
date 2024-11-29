@@ -102,7 +102,7 @@ export default function HomePage() {
           <p>Add Task</p>
         </button>
         <div className="flex flex-col md:flex-row gap-4 ">
-          <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+          <DndContext sensors={sensors} onDragEnd={handleDragEnd} className="z-40">
             {statuses.map((status) => (
               <KanbanBoard
                 key={status.id}

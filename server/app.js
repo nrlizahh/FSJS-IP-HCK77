@@ -14,6 +14,7 @@ const guardUser = require("./middleware/guardUser");
 const crossOrigin = require("./middleware/cors");
 const app = express();
 
+
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

@@ -36,7 +36,9 @@ export default function CreateTask({ onClose, addTaskToBoard }) {
     setIsSuggestionsLoading(true);
     try {
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-      const result = await model.generateContent(`Suggest a detailed description for the task: ${description}`);
+      const result = await model.generateContent(`Suggest a detailed description for the task: ${description}
+          Use this JSON schema: 
+        `);
 
       if (result.error && result.error.includes("SAFETY")) {
         console.error("Content blocked due to safety concerns.");

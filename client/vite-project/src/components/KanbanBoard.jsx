@@ -57,7 +57,7 @@ export default function KanbanBoard({ status, notes }) {
 
   // Hapus task
   const handleDeletedNotes = async (id) => {
-    console.log("🚀 ~ DELETE request diterima untuk Note ID:", req.params.id);
+    console.log("🚀 ~ DELETE request diterima untuk Note ID:");
 
     try {
       const access_token = localStorage.getItem("access_token");
