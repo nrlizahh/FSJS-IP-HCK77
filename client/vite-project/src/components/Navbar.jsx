@@ -50,11 +50,11 @@ export default function Navbar() {
         </div>
 
         {/* User Menu Button */}
-        <div className="flex items-center md:order-2 space-x-3 rtl:space-x-reverse">
+        <div className="flex items-center md:order-2 space-x-3 rtl:space-x-reverse ">
           <button
             onClick={toggleDropdown}
             type="button"
-            className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 ml-9"
             aria-expanded={isDropdownOpen}
           >
             <span className="sr-only">Open user menu</span>
@@ -62,7 +62,7 @@ export default function Navbar() {
               className="w-8 h-8 rounded-full"
               src={
                 user?.picture ||
-                "/default-avatar.png" 
+                "/photoProfile.jpg" 
               }
               alt="User"
             />

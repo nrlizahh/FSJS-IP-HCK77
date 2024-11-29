@@ -1,7 +1,7 @@
 import { useDraggable } from "@dnd-kit/core";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid"; // Import ikon dari Heroicons v2.2.0
 
-export default function CardTask({ note, openEditModal, handleDeletedNotes }) {
+export default function CardTask({ note, openEditModal, handleDeletedNotes}) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: note.id,
   });
