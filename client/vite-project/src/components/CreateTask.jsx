@@ -12,7 +12,7 @@ export default function CreateTask({ onClose, addTaskToBoard }) {
   const [isLoading, setIsLoading] = useState(false);
   const [suggestions, setSuggestions] = useState(null);
   const [isSuggestionsLoading, setIsSuggestionsLoading] = useState(false);
-  const [askAI, setAskAI] = useState(null)
+  const [askAI, setAskAI] = useState("")
 
   // Initialize the Gemini AI client with your API key
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_APIKEY);
@@ -155,7 +155,9 @@ export default function CreateTask({ onClose, addTaskToBoard }) {
 
             <button
               type="button"
+
               onClick={() => {
+                console.log(suggestions, "llllllllllllllllllllll")
                 onChangePayload('description', suggestions)
                 setSuggestions(null)
                 setAskAI(null)

@@ -6,7 +6,7 @@ import {
   TouchSensor,
   useDroppable,
 } from "@dnd-kit/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import CardTask from "./CardTask";
 import EditTaskModal from "./EditTask";
@@ -54,6 +54,23 @@ export default function KanbanBoard({ status, notes }) {
         .catch(console.log);
     }
   };
+
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get("http://localhost:3000/notes", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
+      setNotes(data);
+    } catch (err) {
+      console.log("🚀 ~ fetchData ~ error:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   // Hapus task
   const handleDeletedNotes = async (id) => {

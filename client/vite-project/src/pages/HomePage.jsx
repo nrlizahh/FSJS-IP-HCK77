@@ -100,11 +100,11 @@ export default function HomePage() {
       <div className="p-4 bg-gray-100 min-h-screen">
         <button
           onClick={() => setIsCreatingTask(true)}
-          className="flex p-2 mb-3 text-blue-500 bg-white rounded shadow hover:bg-blue-100"
+          className="flex items-center gap-2 px-4 py-3 mb-2 text-white bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg shadow-md hover:from-blue-600 hover:to-blue-800 focus:ring-2 focus:ring-blue-300"
           aria-label="Add Task"
         >
-          <PlusCircleIcon className="w-6 h-6" />
-          <p>Add Task</p>
+          <PlusCircleIcon className="w-7 h-7" />
+          <p className="text-lg font-medium">Add Task</p>
         </button>
         <div className="flex flex-col md:flex-row gap-4 ">
           <DndContext
